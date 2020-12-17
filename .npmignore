@@ -1,2 +1,9 @@
+.git
+.idea
 node_modules
+.storybook
+
+src
 public
+build
+tests

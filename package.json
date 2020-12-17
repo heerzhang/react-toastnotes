@@ -1,15 +1,32 @@
 {
   "name": "react-toastnotes",
-  "version": "3.3.0-apha",
+  "version": "3.3.1",
   "description": "Flexible, easy to implement toast notifications for react",
-  "main": "commonjs/index.js",
-  "module": "lib/index.js",
-  "typings": "lib/index.d.ts",
-  "style": "src/styles.css",
+  "module": "esm/index.js",
+  "typings": "esm/index.d.ts",
+  "author": "heerzhang <herzhang@163.com>",
+  "homepage": "https://github.com/heerzhang/react-toastnotes",
+  "bugs": {
+    "url": "https://github.com/heerzhang/react-toastnotes/issues"
+  },
+  "maintainers": [
+    {
+      "name": "heerzhang",
+      "email": "herzhang@163.com"
+    }
+  ],
+  "files": [
+    "esm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heerzhang/react-toastnotes.git"
+  },
+  "license": "MIT",
+  "sideEffects": false,
   "scripts": {
-    "build-library-commonjs": "rimraf ./commonjs && tsc -p tsconfig.lib.json --module commonjs --outDir commonjs",
-    "build-library": "rimraf ./lib && tsc -p tsconfig.lib.json --outDir ./lib",
-    "prepublishOnly": "yarn run build-library && yarn run build-library-commonjs"
+    "build-esm": "rimraf esm && tsc --outDir esm",
+    "prepublishOnly": "yarn run build-esm"
   },
   "dependencies": {
     "@reach/alert": "0.12.1",
@@ -25,16 +42,10 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "babel-loader": "^8.2.2",
-
     "react-scripts": "^4.0.1",
-
     "rimraf": "^2.6.3",
     "typescript": "^4.1.3"
   },
-  "author": "heerzhang <herzhang@163.com>",
-  "homepage": "https://github.com/heerzhang/react-toastnotes",
-  "license": "MIT",
-  "repository": "",
   "keywords": [
     "react-component",
     "toast",

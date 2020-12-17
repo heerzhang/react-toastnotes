@@ -90,7 +90,7 @@ export const Message = ({
     onRest
   } as any;
 
-  const transition = useTransition(localShow,  animation);
+  const transitions = useTransition(localShow,  animation);
   const style = React.useMemo(() => getStyle(position), [position]);
 
   function onMouseEnter() {
@@ -146,13 +146,13 @@ export const Message = ({
                             opacity: style.opacity,
                             height: style.height,
                             ...style
-                        }}
+                        }as any}
                     >
                         <animated.div
                             style={{
                                 transform: style.transform,
                                 pointerEvents: "auto"
-                            }}
+                            }as any}
                             ref={container}
                             className="Toaster__message-wrapper"
                         >

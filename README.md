@@ -2,15 +2,16 @@
     
 # Toasted-notes
   
-[![npm package](https://img.shields.io/npm/v/toasted-notes/latest.svg)](https://www.npmjs.com/package/toasted-notes)
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=toasted%20notes%20is%20a%20react%20library%20for%20creating%20simple%2C%20flexible%20toast%20notifications.&url=https://github.com/bmcmahen/toasted-notes&hashtags=react,javascript)
+[![npm package](https://img.shields.io/npm/v/react-toastnotes/latest.svg)](https://www.npmjs.com/package/react-toastnotes)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=toasted%20notes%20is%20a%20react%20library%20for%20creating%20simple%2C%20flexible%20toast%20notifications.&url=https://github.com/heerzhang/react-toastnotes&hashtags=react,javascript)
 [![Follow on Twitter](https://img.shields.io/twitter/follow/benmcmahen.svg?style=social&logo=twitter)](
 https://twitter.com/intent/follow?screen_name=benmcmahen
 )
 
 </div>
 
-A simple but flexible implementation of toast style notifications for React extracted from [Sancho UI](https://github.com/bmcmahen/sancho).
+A simple but flexible implementation of toast style notifications for React extracted from [customize-easy-ui-component](https://github.com/heerzhang/customize-easy-ui-component).
+- 原版的包"toasted-notes"无人维护更新，无法适应react-spring v9,依赖有问题，故而只好自建新的包并改名。
 
 [View the demo and documentation](https://toasted-notes.netlify.com/).
 
@@ -22,17 +23,17 @@ A simple but flexible implementation of toast style notifications for React extr
 
 ## Install
 
-Install `toasted-notes` and its peer dependency, `react-spring`, using yarn or npm.
+Install `react-toastnotes` , using yarn or npm.
 
 ```
-yarn add toasted-notes react-spring
+yarn add react-toastnotes
 ```
 
 ## Example
 
 ```jsx
-import toaster from "toasted-notes";
-import "toasted-notes/src/styles.css"; // optional styles
+import toaster from "react-toastnotes";
+//import "react-toastnotes/src/styles.css"; // optional styles
 
 const HelloWorld = () => (
   <button
@@ -93,7 +94,7 @@ toaster.notify(() => <CustomNotificationWithTheme title="I am pretty" />);
 
 ## Contributors
 
-- [Einar Löve](https://github.com/einarlove)
+- [Heerzhang](https://github.com/heerzhang)
 
 ## License
 
