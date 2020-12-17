@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useTransition, animated } from "react-spring";
+import { animated, useTransition } from "react-spring";
 import ReachAlert from "@reach/alert";
 import Alert from "./Alert";
 import { useTimeout } from "./useTimeout";
@@ -90,7 +90,7 @@ export const Message = ({
     onRest
   } as any;
 
-  const transition = useTransition(localShow, null, animation);
+  const transition = useTransition(localShow,  animation);
   const style = React.useMemo(() => getStyle(position), [position]);
 
   function onMouseEnter() {
@@ -134,33 +134,34 @@ export const Message = ({
 
   return (
     <React.Fragment>
-      {transition.map(
-        ({ key, item, props }) =>
-          item && (
-            <animated.div
-              key={key}
-              className="Toaster__message"
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-              style={{
-                opacity: props.opacity,
-                height: props.height,
-                ...style
-              }}
-            >
-              <animated.div
-                style={{
-                  transform: props.transform,
-                  pointerEvents: "auto"
-                }}
-                ref={container}
-                className="Toaster__message-wrapper"
-              >
-                <ReachAlert>{renderMessage()}</ReachAlert>
-              </animated.div>
-            </animated.div>
-          )
-      )}
+        {transitions((style, item) => {
+            return (
+                item && (
+                    <animated.div
+                        key={1}
+                        className="Toaster__message"
+                        onMouseEnter={onMouseEnter}
+                        onMouseLeave={onMouseLeave}
+                        style={{
+                            opacity: style.opacity,
+                            height: style.height,
+                            ...style
+                        }}
+                    >
+                        <animated.div
+                            style={{
+                                transform: style.transform,
+                                pointerEvents: "auto"
+                            }}
+                            ref={container}
+                            className="Toaster__message-wrapper"
+                        >
+                            <ReachAlert>{renderMessage()}</ReachAlert>
+                        </animated.div>
+                    </animated.div>
+                )
+            )
+        })}
     </React.Fragment>
   );
 };
